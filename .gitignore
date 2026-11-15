@@ -1,0 +1,97 @@
+# Pinned read-only checkouts (tools/fetch_refs.sh; cloned locally, never committed)
+/refs/
+
+# Downloaded toolchain binaries and Python environments
+/toolchain/
+/.venv/
+/.venv-py314/
+__pycache__/
+
+# Personal paths to game files and keys
+/config.local.toml
+
+# Game inputs and everything derived from them. Never commit these.
+# tools/check_content.py enforces the same rule in CI and the pre-commit hook.
+/game/
+/build/
+/generated/
+# Button art a release carries (tools/make_launcher.py --prompt-art); a checkout may hold it for a test build
+/prompt-art/
+# The shared pipeline list a release carries (tools/pipeline_list.py merge; tools/prepare_shaders.py reads it here)
+/tools/data/pipeline_list.bin
+/data/pipeline_list.bin
+# Execution profiles of the game's code (tools/pgo.py merge writes them under build/; a release carries one in data/)
+*.profdata
+*.profraw
+/data/pgo-*.json
+*.xci
+*.xcz
+*.nsp
+*.nsz
+*.nca
+*.ncz
+*.tik
+*.keys
+*.nso
+*.npdm
+*.zs
+*.pack
+*.sarc
+*.bfres
+*.bntx
+*.bnsh
+*.webm
+
+# The runtime's own shaders compiled to SPIR-V (tools/build_shaders.py builds them from runtime/shaders/ and the
+# tools/make_*.py assemblers when the game is built; tools/check_content.py refuses them in a commit)
+/runtime/*_spv.h
+*.spv
+# The menu font's bytes as a header for compilers without #embed (tools/build_shaders.py EMBEDDED)
+/runtime/ui/roboto_ttf.h
+/runtime/smaa_area_tex.h
+/runtime/smaa_search_tex.h
+
+# Build outputs
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.obj
+*.o
+*.lib
+*.a
+*.so
+*.so.*
+*.AppImage
+
+# .NET build output of the shader translator (tools/build_xlate.py)
+/tools/xlate/bin/
+/tools/xlate/obj/
+
+# Coding-agent setup and working notes (skills, hooks, playbook, backlog, research notes, milestone plans): local to
+# the maintainer's machine. tools/worktree.py links .claude and notes into task worktrees.
+/.claude/
+/.agents/
+/CLAUDE.local.md
+/skills-lock.json
+/notes/
+/docs/milestones/
+
+# Editor settings
+.vs/
+.vscode/
+.idea/
+
+# Patch leftovers, logs and OS files
+*.orig
+*.rej
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Agent task worktrees (tools/worktree.py)
+/.worktrees/
+
+# The release folder (tools/make_release.py): nx2navi_xlate.exe with its id file, hactool, ninja and the DLLs
+/bin/
