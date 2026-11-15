@@ -2,8 +2,6 @@
 
 # NX2navi
 
-**Join the official NX2navi update discord server: https://discord.com/invite/uf6gSrsPpq** 
-
 **NX2navi** is a static recompilation of *The Legend of Zelda: Ocarina of Time* for Nintendo Switch 2 (game
 version 1.1.1) into a native x86-64 application for Windows, with a Vulkan renderer
 ([docs/architecture.md](docs/architecture.md)).
@@ -84,11 +82,6 @@ and `VK_EXT_mesh_shader`. The setup is not signed, so SmartScreen warns on its f
 - A rare crash in the game's particle code.
 
 ## License
-
-The source is public to read. Its additions and changes are all rights reserved ([LICENSE-ADDITIONS](LICENSE-ADDITIONS)):
-no part of them may be copied or published without written permission. The base import stays under its
-[MIT License](LICENSE), and third-party code keeps its own license ([THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
-No license grants anything for Nintendo's game.
 
 NX2navi is an independent, non-commercial fan project, not affiliated with or endorsed by Nintendo. *The Legend
 of Zelda*, *Ocarina of Time* and *Nintendo Switch* are trademarks of Nintendo.
